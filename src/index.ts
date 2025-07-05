@@ -1,11 +1,7 @@
-import express from "express";
+import app from "./app"
+import './config/dbconnection'
+import dotenv from "dotenv";
+dotenv.config();
+const port = process.env.PORT || 5000;
 
-const app = express();
-
-app.use(express.json());
-
-app.get('/',(req,res)=>{
-    res.send("Done server is running");
-});
-
-app.listen(5000,()=>console.log("Server is running at 5000 port"))
+app.listen(port,()=>console.log("Server is running at 5000 port"));
